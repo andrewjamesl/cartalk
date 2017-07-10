@@ -4,6 +4,7 @@ class CreatePlates < ActiveRecord::Migration[5.1]
       t.string :number
 
       t.timestamps
-    end
+    
   end
+  add_index :plates, unique: true
 end

@@ -1,0 +1,6 @@
+<%= form_with(model: [@plate, @plate.comments.build], locals: true) do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>
+
+

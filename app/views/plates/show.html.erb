@@ -5,5 +5,19 @@
   <%= @plate.number %>
 </p>
 
+<div>
+<%= render 'comments/form' %>
+</div>
+
+<% @plate.comments.each do |comment| %>
+<p>
+  <strong>Comment:</strong>
+  <%= comment.content %>
+  <%= link_to 'Delete', plate_comment_path(@plate), method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+<% end %> 
+
+
+
 <%= link_to 'Edit', edit_plate_path(@plate) %> |
 <%= link_to 'Back', plates_path %>
